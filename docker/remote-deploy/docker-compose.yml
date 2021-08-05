@@ -3,7 +3,7 @@ version: '3.8'
 services:
   tesler-demo:
     build: .
-    image: tesler-demo:latest
+    image: abratashev/tesler-demo:latest
     environment:
       DATABASE_URL: 'jdbc:postgresql://tesler_postgres:5432/postgres'
       AUTH_SERVER_URL: 'http://localhost:9080/auth'
@@ -39,8 +39,8 @@ services:
           '-Dkeycloak.profile.feature.upload_scripts=enabled'
       ]
     volumes:
-      - ./docker/keycloak-config:/opt/jboss/keycloak/realm-config
-      - ./.tmp/keycloak-db:/opt/jboss/keycloak/standalone/data
+      - ../keycloak-config:/opt/jboss/keycloak/realm-config
+      - ../../.tmp/keycloak-db:/opt/jboss/keycloak/standalone/data
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
