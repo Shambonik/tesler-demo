@@ -1,9 +1,12 @@
 @value colors "../../../assets/styles/theme.module.css";
 @value accent, main-dark-mode from colors;
 
+.base {
+    padding: 10px 16px;
+}
+
 .operation {
     height: 40px;
-    padding: 10px 16px;
     background-color: accent;
     color: main-dark-mode;
     border-radius: 8px;
@@ -12,6 +15,10 @@
     margin-right: 0.5em;
 }
 
-.operation, :global(.ant-btn.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only)) {
+.base, :global(.ant-btn.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only)) {
     padding: 10px 16px;
+}
+
+.link {
+    color: accent;
 }

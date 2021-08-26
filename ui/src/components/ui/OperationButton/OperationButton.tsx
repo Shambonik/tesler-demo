@@ -7,7 +7,11 @@ import { ButtonProps } from 'antd/lib/button/button'
 function OperationButton(props: ButtonProps) {
     const { className, children, onClick, ...rest } = props
     return (
-        <Button {...rest} onClick={onClick} className={cn(styles.operation, className)}>
+        <Button
+            {...rest}
+            onClick={onClick}
+            className={cn(styles.base, { [styles.operation]: rest.type !== 'link', [styles.link]: rest.type === 'link' }, className)}
+        >
             {children}
         </Button>
     )
