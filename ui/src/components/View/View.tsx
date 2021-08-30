@@ -12,10 +12,12 @@ import Info from '../widgets/Info/Info'
 import Table from '../widgets/Table/Table'
 import { FieldType } from '@tesler-ui/core/interfaces/view'
 import Dictionary from '../../fields/Dictionary/Dictionary'
+import ColoredMark from '../../fields/ColoredMark/ColoredMark'
 
 const skipWidgetTypes = [WidgetTypes.SecondLevelMenu]
 
 const customFields = {
+    [CustomFieldTypes.ColoredMark]: ColoredMark,
     [FieldType.dictionary]: Dictionary,
     [CustomFieldTypes.MultipleSelect]: MultipleSelectField
 }
